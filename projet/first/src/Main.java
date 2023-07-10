@@ -59,8 +59,29 @@ public class Main {
         };
         int totalAdresse = adressesMail.length;
         System.out.println("Nombre total d'adresses mail: " + totalAdresse);
-        
-    }}
+
+        int gmailCount = 0;
+        int sfrCount = 0;
+        int orangeCount = 0;
+
+        for (String adresse : adressesMail) {
+            if (adresse.endsWith("@gmail.com")) {
+                gmailCount++;
+            } else if (adresse.endsWith("@sfr.com")) {
+                sfrCount++;
+            } else if (adresse.endsWith("@orange.com")) {
+                orangeCount++;
+            }
+        }
+
+        double pourcentageGmail = (double) gmailCount / totalAdresse * 100;
+        double pourcentageSfr = (double) sfrCount / totalAdresse * 100;
+        double pourcentageOrange = (double) orangeCount / totalAdresse * 100;
+        System.out.println("Pourcentage de fournisseurs de sercie mail (sfr) : " + pourcentageSfr + "%");
+        System.out.println("Pourcentage de fournisseurs de sercie mail (sfr) : " + pourcentageOrange + "%");
+        System.out.println("Pourcentage de fournisseurs de service mail (gmail) : " + pourcentageGmail + "%");
+    }
+    }
             //Pour creer un dalton:
             enum Dalton {
                 JOE(1.40, 52),
