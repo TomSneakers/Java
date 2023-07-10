@@ -45,3 +45,5 @@ Lundi 10 juillet:
     -brew install openjdk@17
     - echo 'export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"' >> ~/.zshrc
     - export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
+Première ligne de code: 
+System.out.printf("Hello and welcome!"); --> pour faire apparaitre hello word en console
