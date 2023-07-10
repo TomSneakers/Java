@@ -171,3 +171,19 @@ public enum Month{
  }
 La déclaration d'une enum peut etre considere comme l'utilisation d'une "classe cacher"
 Cette classe herite de java.lang.Enum
+
+Les tableaux
+Exemple de syntaxe:
+//declaration du tableau
+int[] unTableau;
+//Initialisation avec 122 de taille ( Possible de mettre 122 objet dans ce tableau )
+unTableau = new int[122];
+//Autre facon d'initialiser
+int[] autreSyntaxe = {2,3,14,124,2};
+
+On peut acceder au element d'un tableau de cette maniere:
+autreSyntxe[4]
+Si vous tenter d'acceder a un index inexistant vous allez obtenir une exception de type:
+ArrayIndexOutOfBoundException
+
+Il est possible de travailler avec des tableaux a plusieurs dimension 

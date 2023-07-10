@@ -1,3 +1,4 @@
+import javax.xml.namespace.QName;
 import java.util.Date;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -32,6 +33,13 @@ public class Main {
         //Variable constant
         final double PI= 3.14159265358979323846264338327950288419716939937510582;
         System.out.println(PI);
+        //Exercice Dalton
+        Dalton temel = Dalton.JACK;
+        System.out.println(temel.toString());
+        System.out.println(temel);
+        Dalton data = Dalton.valueOf("Jack");
+        System.out.println(data.taille());
+        for (Dalton dalton: Dalton.values())
     }
     }
     //Pour creer un dalton:
