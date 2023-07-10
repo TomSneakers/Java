@@ -39,11 +39,49 @@ Lundi 10 juillet:
         -openJdk
 
     Consigne de post install:
-
     Voici les consignes afin d'installé java avec homebrew sur mac
     installation de la version 17 d'openjdk
     -brew install openjdk@17
     - echo 'export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"' >> ~/.zshrc
     - export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
-Première ligne de code: 
+
+Première ligne de code en java: 
 System.out.printf("Hello and welcome!"); --> pour faire apparaitre hello word en console
+
+Consigne pour installé mySql:
+    -brew install mysql
+    -mysql_secure_installation
+    -mysql -u root
+    -brew services start mysql
+
+Il faut + etapes pour exe un programme java:
+    -compilation: code source (en java) -> bytecode (langage intermédiaire). Le bytecode n'est pas en binaire, cela veut dire qu'il ne peux pas etre interpreter par la machine.
+    C'est la jvm qui charge le bytecode et le compile à la volée pour executer du code qui sera compréhensible par la machine hote
+
+Utilisé le comilateur:
+javac nom_de_votre_projet.java --> obtenue du byteCode: nom_de_votre_projet.class --> lancer par la jvm --> ensuite java nom_de_votre_projet.class
+
+Instance de class: l'objet créé à partir d'une classe
+Les catégorie de variables:
+
+-Les varibale d'instance: nexiste que si une intance de classe est disponible. chaque instance possède sa propre version de la variable
+
+-les variables de classes:elles sont aussi declarer à l'interieur d'une classe avec le mot cle static. La variable de classe est disponible directement depuis la classe et existe en un unique exemplaire. On peut avoir 50 instance d'une meme classe mais la valeur d'une variable de classe est unique.
+
+-Les variable locales sont déclarer a l'interieur d'une methode 
+
+Pour écrire du code propre, avec peu d'erreur, suivre la convention d'écriture JAVA qui est un document officiel montrant comment écrire du JAVA propement: Quelque exemple:
+        -Nomenclature des variable:
+            - Le nom du variable commence par une lettre
+            - Lettres, chiffre et underscore
+            - Nombre illimité de caractère
+            - sensible à la casse avec les majuscule 
+            - keywords
+            - camel case: le nom commence par une minuscule et chaque nouveau mot par une majuscule
+
+Les types de variable:
+    On distingue deux types de variable
+        -les types de valeur: celle qui stockent des valeurs
+        - les types réérences: celle qui ne stockent pas réelement de valeur
+    Les types valeurs designent les types primitifs, on en compte quatre en java: entiers, decimaux, les chars et les booleen
+    Les types de références designent un types plus complexe: un ensemble cohérent de variables 
