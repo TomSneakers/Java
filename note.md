@@ -85,3 +85,58 @@ Les types de variable:
         - les types réérences: celle qui ne stockent pas réelement de valeur
     Les types valeurs designent les types primitifs, on en compte quatre en java: entiers, decimaux, les chars et les booleen
     Les types de références designent un types plus complexe: un ensemble cohérent de variables 
+
+La déclarition
+En java:
+[modificateur] type maVariable;
+On peut declarer plusieurs variables du meme types sur la meme ligne:
+type var1,var2,var3, ...;
+Exemple:
+int ageDeTom;
+Date armistice, noel;
+
+Pour initialiser une varible, on utilise l'opérateur '='
+int nombreDeTacos = 1;
+
+exemple:
+int ageDeTom = 20;
+int ageDeTemel = ageDeTom;
+ageDeTom = 44;
+System.out.println(ageDeTemel);
+System.out.println(ageDeTom);
+
+Résultat: 
+20
+44
+
+Ce code a pour but de prouver que la variable ageDeTom et ageDeTemel sont bien de varaible types valeur et non référence
+
+
+ Date naissanceTom = new Date( 103, 1, 11 );
+ Date autreDate = naissanceTom;
+ //Changer la varible afin de tester la variable et savoir si c'est une variable types valeur ou référence
+ naissanceTom.setTime(1);
+ System.out.println(naissanceTom);
+ System.out.println(autreDate);
+
+ Ce code a pour but de prouver que la variable autreDate et naissanceTom sont bien de varaible types reférence et non valeur
+
+Nombre entier:
+...
+
+Nombre décimaux:
+Exemple:
+    float someFloat = -150.324;
+    System.out.println(someFloat);
+    Resultat:
+    java: incompatible types: possible lossy conversion from double to float
+
+    float someFloat = -150.324f;
+    System.out.println(someFloat);
+    Résultat:
+    -150.324
+
+Les constantes:
+Variable qui ne doit pas être modifier au cours de l'execution du programme, il convient alors de définir des constantes.
+
+    
