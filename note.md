@@ -187,3 +187,15 @@ Si vous tenter d'acceder a un index inexistant vous allez obtenir une exception 
 ArrayIndexOutOfBoundException
 
 Il est possible de travailler avec des tableaux a plusieurs dimension 
+La syntaxe pour recuperer des element dans un tableau a 2 dimension est la suivante:
+int elemTableau2D = tableau2D[0][1];
+
+Autre methode de creation:
+int [][] matrice;
+matrice = new int[2][];
+matrice[0] = new int[4];
+matrice[1] = new int[2];
+
+Encore une autre syntaxe:
+int [][] encoreUneAutreSyntaxe = {{1,2,3}{1,3,6}}
+Tableau a deux lignes et trois colonnes
