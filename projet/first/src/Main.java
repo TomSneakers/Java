@@ -58,14 +58,17 @@ public class Main {
                 "didier@gmail.com"
         };
         int totalAdresse = adressesMail.length;
+        //Pour trouver le nombre d'adresse Total, on prend la longueur du tableau
         System.out.println("Nombre total d'adresses mail: " + totalAdresse);
-
+        //On initialise des variables type valeur à 0 qu'on se servira pour le pourcentage
         int gmailCount = 0;
         int sfrCount = 0;
         int orangeCount = 0;
-
+        //On utilise une boucle for pour parcourir toute les adresses mail une par une
         for (String adresse : adressesMail) {
+            //On utise la fonction endsWith pour recuperer la fin des mail
             if (adresse.endsWith("@gmail.com")) {
+                //on utilise "++" pour ajouté 1 a la variable
                 gmailCount++;
             } else if (adresse.endsWith("@sfr.com")) {
                 sfrCount++;
@@ -73,10 +76,11 @@ public class Main {
                 orangeCount++;
             }
         }
-
+        // on creer une varibale pour le porcentage et mettons le calcul du pourcentage
         double pourcentageGmail = (double) gmailCount / totalAdresse * 100;
         double pourcentageSfr = (double) sfrCount / totalAdresse * 100;
         double pourcentageOrange = (double) orangeCount / totalAdresse * 100;
+        //Affichage du pourcentage
         System.out.println("Pourcentage de fournisseurs de sercie mail (sfr) : " + pourcentageSfr + "%");
         System.out.println("Pourcentage de fournisseurs de sercie mail (sfr) : " + pourcentageOrange + "%");
         System.out.println("Pourcentage de fournisseurs de service mail (gmail) : " + pourcentageGmail + "%");

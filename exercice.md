@@ -18,4 +18,3 @@ Calculez le pourcentage de fournisseur de service mail (pour une addresse @gmail
 Consulter la javadoc: 
 -string: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html
 
-int length() Returns the length of this string. 
