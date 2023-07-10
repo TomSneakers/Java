@@ -14,7 +14,7 @@ public class Main {
         System.out.println(ageDeTemel);
         System.out.println(ageDeTom);
 
-        Date naissanceTom = new Date( 103, 1, 11 );
+        Date naissanceTom = new Date(103, 1, 11);
         Date autreDate = naissanceTom;
         //Changer la varible afin de tester la variable et savoir si c'est une variable types valeur ou référence
         naissanceTom.setTime(1);
@@ -31,34 +31,60 @@ public class Main {
         System.out.println(someFloat);
 
         //Variable constant
-        final double PI= 3.14159265358979323846264338327950288419716939937510582;
+        final double PI = 3.14159265358979323846264338327950288419716939937510582;
         System.out.println(PI);
         //Exercice Dalton
         Dalton temel = Dalton.JACK;
         System.out.println(temel.toString());
         System.out.println(temel);
-        Dalton data = Dalton.valueOf("Jack");
+        Dalton data = Dalton.valueOf("JACK");
         System.out.println(data.taille());
-        for (Dalton dalton: Dalton.values())
-    }
-    }
-    //Pour creer un dalton:
- enum Dalton{
-        JOE (1.40, 52),
-        WILLIAM (1.68, 72),
-        JACK (1.93, 83),
-        AVERELL (2.13, 89);
-        private final double taille;
-        private final double poids;
-        private Dalton (double taille, double poids)
-        {
-            this.taille = taille;
-            this.poids = poids;
-        }
-        public double taille() { return taille; } public double poids() { return poids; }
+        //for (Dalton dalton : Dalton.values())
+        //{}
 
 
-        double imc() {
-            return poids/(taille+taille);
-        }
-        }
+        //Exercice 1
+        System.out.println("Exercice 1\n");
+        String[] adressesMail = {
+                "fzne@gmail.com",
+                "zejnfzj@sfr.com",
+                "tom@sfr.com",
+                "evan@sfr.com",
+                "zefn@gmail.com",
+                "helodi@orange.com",
+                "hello@sfr.com",
+                "ttpv@gmail.com",
+                "sttmz@sfr.com",
+                "didier@gmail.com"
+        };
+        int totalAdresse = adressesMail.length;
+        System.out.println("Nombre total d'adresses mail: " + totalAdresse);
+        
+    }}
+            //Pour creer un dalton:
+            enum Dalton {
+                JOE(1.40, 52),
+                WILLIAM(1.68, 72),
+                JACK(1.93, 83),
+                AVERELL(2.13, 89);
+                private final double taille;
+                private final double poids;
+
+                private Dalton(double taille, double poids) {
+                    this.taille = taille;
+                    this.poids = poids;
+                }
+
+                public double taille() {
+                    return taille;
+                }
+
+                public double poids() {
+                    return poids;
+                }
+
+
+                double imc() {
+                    return poids / (taille + taille);
+                }
+            }
