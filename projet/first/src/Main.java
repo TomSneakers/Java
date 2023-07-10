@@ -20,7 +20,7 @@ public class Main {
 
         System.out.println(naissanceTom);
         System.out.println(autreDate);
-        
+
         //Nombre entier
         byte someByte = 120;
         System.out.println(someByte);
@@ -29,5 +29,28 @@ public class Main {
         float someFloat = -150.324f;
         System.out.println(someFloat);
 
+        //Variable constant
+        final double PI= 3.14159265358979323846264338327950288419716939937510582;
+        System.out.println(PI);
     }
     }
+    //Pour creer un dalton:
+ enum Dalton{
+        JOE (1.40, 52),
+        WILLIAM (1.68, 72),
+        JACK (1.93, 83),
+        AVERELL (2.13, 89);
+        private final double taille;
+        private final double poids;
+        private Dalton (double taille, double poids)
+        {
+            this.taille = taille;
+            this.poids = poids;
+        }
+        public double taille() { return taille; } public double poids() { return poids; }
+
+
+        double imc() {
+            return poids/(taille+taille);
+        }
+        }

@@ -139,4 +139,35 @@ Exemple:
 Les constantes:
 Variable qui ne doit pas être modifier au cours de l'execution du programme, il convient alors de définir des constantes.
 
-    
+Pour définir une constante on utilise le mot clé: final
+Exemple: 
+final double PI = 3,14159265358979323846264338327950288419716939937510582;
+
+L'initialisation de la constante est obligaoire lors de sa déclaration.
+Souvent les constante sont définies comme membre statique
+Par convention on les écrit en MAJUSCULES
+
+Les enumération
+Elles permettent de definir un ensemble de constantes
+Exemple:
+public enum Month{
+    JANVIER,
+    FEVRIER,
+    MARS,
+    AVRIL,
+    MAI,
+    JUIN,
+    JUILLET,
+    AOUT,
+    SEPTEMBRE,
+    OCTOBRE,
+    NOVEMBRE,
+    DECEMBRE
+}
+ L'équivalent avec une classe:
+
+ public class Month{
+    public static final int JANVIER = 0, FEVRIER = 1, ...
+ }
+La déclaration d'une enum peut etre considere comme l'utilisation d'une "classe cacher"
+Cette classe herite de java.lang.Enum
