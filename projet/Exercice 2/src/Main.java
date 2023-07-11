@@ -10,6 +10,7 @@ public class Main {
 
         while (true) {
             // Attribution au variable nombre1, nombre2, nombre3, des valeur aléatoire qui ne dépasse pas 1000
+            //lien utile: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/random/package-summary.html
             int nombre1 = random.nextInt(1001);
             int nombre2 = random.nextInt(1001);
             int nombre3 = random.nextInt(1001);
