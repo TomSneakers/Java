@@ -11,6 +11,7 @@ public class Main {
         scanner.close();
 
         //Conversion
+        //Lien utile de la doc https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html
         String binaire = Integer.toBinaryString(nombre);
         String octal = Integer.toOctalString(nombre);
         String hexadecimal = Integer.toHexString(nombre);
