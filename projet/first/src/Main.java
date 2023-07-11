@@ -5,46 +5,52 @@ import java.util.Date;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+
+        //Premier pas avec JAVA, le fameux hello and welcome
+        System.out.println("Hello and welcome!");
+        // Voir les type de variable (valeur)
         int ageDeTom = 20;
         int ageDeTemel = ageDeTom;
         ageDeTom = 44;
-        System.out.println(ageDeTemel);
-        System.out.println(ageDeTom);
+        System.out.println("\nage de Temel : " + ageDeTemel);
+        System.out.println("\nNage de Tom : " + ageDeTom);
 
+
+        //Voir les types de variables (reférences)
         Date naissanceTom = new Date(103, 1, 11);
         Date autreDate = naissanceTom;
         //Changer la varible afin de tester la variable et savoir si c'est une variable types valeur ou référence
         naissanceTom.setTime(1);
+        System.out.println("\nDate de naissance de Tom : " + naissanceTom);
+        System.out.println("\nAutre date de naissance : " + autreDate);
 
-        System.out.println(naissanceTom);
-        System.out.println(autreDate);
 
         //Nombre entier
         byte someByte = 120;
-        System.out.println(someByte);
+        System.out.println("Variable byte : " + someByte);
 
         //Nombre décimaux
         float someFloat = -150.324f;
-        System.out.println(someFloat);
+        System.out.println("variable float" + someFloat + "\n");
+
 
         //Variable constant
         final double PI = 3.14159265358979323846264338327950288419716939937510582;
-        System.out.println(PI);
+        System.out.println("Nombre PI : " + PI + "\n");
+
+
         //Exercice Dalton
         Dalton temel = Dalton.JACK;
         System.out.println(temel.toString());
         System.out.println(temel);
         Dalton data = Dalton.valueOf("JACK");
-        System.out.println(data.taille());
+        System.out.println(data.taille() + "\n");
         //for (Dalton dalton : Dalton.values())
         //{}
 
 
-        //Exercice 1
-        System.out.println("Exercice 1\n");
+        //Exercice 1 sans la fonction
+        System.out.println("Exercice 1");
         String[] adressesMail = {
                 "fzne@gmail.com",
                 "zejnfzj@sfr.com",
@@ -85,17 +91,8 @@ public class Main {
         System.out.println("Pourcentage de fournisseurs de sercie mail (sfr) : " + pourcentageOrange + "%");
         System.out.println("Pourcentage de fournisseurs de service mail (gmail) : " + pourcentageGmail + "%");
 
-
-
-
-
-
-
-
-
-
-
-
+        //Exercice 1 avec la fonction ce trouvre dans le fichier /ExerciceTest
+        
     }
     }
             //Pour creer un dalton:
