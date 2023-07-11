@@ -92,7 +92,7 @@ public class Main {
         System.out.println("Pourcentage de fournisseurs de service mail (gmail) : " + pourcentageGmail + "%");
 
         //Exercice 1 avec la fonction ce trouvre dans le fichier /ExerciceTest
-        
+
     }
     }
             //Pour creer un dalton:
