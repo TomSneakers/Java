@@ -84,6 +84,18 @@ public class Main {
         System.out.println("Pourcentage de fournisseurs de sercie mail (sfr) : " + pourcentageSfr + "%");
         System.out.println("Pourcentage de fournisseurs de sercie mail (sfr) : " + pourcentageOrange + "%");
         System.out.println("Pourcentage de fournisseurs de service mail (gmail) : " + pourcentageGmail + "%");
+
+
+
+
+
+
+
+
+
+
+
+
     }
     }
             //Pour creer un dalton:
