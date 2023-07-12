@@ -31,8 +31,11 @@ public class Main {
                 System.out.println("Authentification échouée. Veuillez réessayer.");
             }
             System.out.print("Voulez-vous effectuer une autre opération ? yes or non ");
+
             // Lecture de l'option de l'utilisateur pour continuer ou quitter
             String option = scanner.next();
+            //Si l'entrer option n'est pas yes alors il arrete le programm, si l'entrer est yes alors il recommence le programme
+            //C'est un bolléen inversé grace au point ! au debut de la fonction
             if (!option.equalsIgnoreCase("yes")) {
                 break;
             }
