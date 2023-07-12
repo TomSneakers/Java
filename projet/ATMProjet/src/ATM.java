@@ -15,18 +15,26 @@ public class ATM {
         this.currentPin = 0;
     }
 
+    //methode authenticate qui prend en parametre un entier pin, et qui renvoie une valeur booléen
+    //Elle est directement utilisé dans la classe Main
     public boolean authenticate(int pin) {
         // Vérifie si le code PIN fourni correspond à un client de la banque
         Client client = bank.getClientByPin(pin);
+        // Verifie si la variable client n'est pas null, si c'est le cas alors le codePin correspond à un client
         if (client != null) {
-            currentPin = pin; // Enregistre le code PIN actuellement authentifié
-            return true; // Authentification réussie
+            // Enregistre le code PIN actuellement authentifié
+            currentPin = pin;
+            // Authentification réussie
+            return true;
         }
-        return false; // Authentification échouée
+        // Authentification échouée
+        return false;
     }
 
+    //Methode displauMenu, elle ne retourne rien et permet d'afficher le menue (donc que du texte dans la console)
+    //elle est directelent utilisé dans la classe Main
     public void displayMenu() {
-        // Affiche le menu des options disponibles
+        // Affiche le menu
         System.out.println("Menu :");
         System.out.println("1. Consulter le solde");
         System.out.println("2. Déposer de l'argent");
@@ -36,42 +44,59 @@ public class ATM {
     }
 
     public void performOperation(int choice) {
+        //initialisation de l'objet scanner de la classe Scanner
         Scanner scanner = new Scanner(System.in);
 
-        if (currentPin == 0) {
-            System.out.println("Authentification requise."); // Si aucun client n'est authentifié, affiche un message d'erreur
-            return;
-        }
-
-        Client client = bank.getClientByPin(currentPin); // Récupère le client correspondant au code PIN actuellement authentifié
+        // Récupère le client correspondant au code PIN actuellement authentifié garce à la méthode créer dans la classe Bank
+        Client client = bank.getClientByPin(currentPin);
 
         switch (choice) {
+            //Lien utile pour le menue switch :
+            //https://docs.oracle.com/en/java/javase/17/language/switch-expressions.html#GUID-BA4F63E3-4823-43C6-A5F3-BAA4A2EF3ADC
             case 1:
-                System.out.println("Solde actuel : " + client.getSolde()); // Affiche le solde du client
+                // Affiche le solde du client
+                System.out.println("Solde actuel : " + client.getSolde());
                 break;
+
             case 2:
+                // Lit le montant à déposer
                 System.out.print("Montant à déposer : ");
-                double depositAmount = scanner.nextDouble(); // Lit le montant à déposer
-                scanner.nextLine(); // Vide le tampon de lecture
-                client.setSolde(client.getSolde() + depositAmount); // Ajoute le montant déposé au solde du client
-                System.out.println("Dépôt effectué. Nouveau solde : " + client.getSolde()); // Affiche le nouveau solde après le dépôt
+
+                //declaration d'une varibale double -> depositAMount  qui prend pour valeur l'entrer de l'utilisateur
+                double depositAmount = scanner.nextDouble();
+
+                // Ajoute le montant déposé au solde du client
+                client.setSolde(client.getSolde() + depositAmount);
+
+                // Affiche le nouveau solde après le dépôt
+                System.out.println("Dépôt effectué. Nouveau solde : " + client.getSolde());
                 break;
+
             case 3:
                 System.out.print("Montant à retirer : ");
-                double withdrawAmount = scanner.nextDouble(); // Lit le montant à retirer
-                scanner.nextLine(); // Vide le tampon de lecture
 
+                //declaration d'une varibale double -> withdrawAmount  qui prend pour valeur l'entrer de l'utilisateur
+                double withdrawAmount = scanner.nextDouble();
+
+                //Verifie si le montant retirer est inférieur ou egale au solde du cleint
                 if (withdrawAmount <= client.getSolde()) {
-                    client.setSolde(client.getSolde() - withdrawAmount); // Déduit le montant retiré du solde du client
-                    System.out.println("Retrait effectué. Nouveau solde : " + client.getSolde()); // Affiche le nouveau solde après le retrait
+
+                    //Si le montant retirer est inférieur au solde alors il deduit le montant retirer au solde du client
+                    client.setSolde(client.getSolde() - withdrawAmount);
+                    //Puis l'affiche
+                    System.out.println("Retrait effectué. Nouveau solde : " + client.getSolde());
                 } else {
-                    System.out.println("Solde insuffisant."); // Affiche un message d'erreur si le solde est insuffisant pour le retrait
+                    //Sinon message d'erreur
+                    System.out.println("Solde insuffisant.");
                 }
                 break;
+
             case 4:
-                System.out.println("Merci d'utiliser notre ATM. Au revoir !"); // Affiche un message de sortie
-                currentPin = 0; // Réinitialise le code PIN actuellement authentifié (déconnexion)
+                //Case de sortie du programm en remettant le currentPin a 0 c'est a dire en deconnectant le client
+                System.out.println("Merci d'utiliser notre ATM. Au revoir !");
+                currentPin = 0;
                 break;
+            //Si l'ulisateur ne renseigne pas les bon choix c'est a dire 1,2,3 ou 4, un message par default s'affiche
             default:
                 System.out.println("Choix invalide."); // Affiche un message d'erreur pour un choix invalide
                 break;
