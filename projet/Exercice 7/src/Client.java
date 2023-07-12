@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Client {
 
     // Les attributs de la classe Client
@@ -6,6 +8,12 @@ public class Client {
     private String adresse;
     private String codePostal;
     private String ville;
+    private LocalDate dateNaissance;
+    //Le constructeur de l'age du client:
+    public int getAge(){
+        return dateNaissance.until(LocalDate.now()).getYears();
+    }
+
 
     // Le constructeur de la classe Client
     public Client(String nom, String prenom, String adresse, String codePostal, String ville) {
@@ -15,6 +23,7 @@ public class Client {
         this.adresse = adresse;
         this.codePostal = codePostal;
         this.ville = ville;
+
     }
 
     // Les méthodes get pour récupérer les valeurs des attributs

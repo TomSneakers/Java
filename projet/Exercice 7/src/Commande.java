@@ -1,52 +1,45 @@
-
-import java.util.ArrayList;
+import java.util.Date;
 
 public class Commande {
-    // L'attribut de la classe Commande
-    private ArrayList<Article> articles;
-    private double total;
+    private int numero;
+    private Date date;
+    private Client client;
+    private Article[] articles;
+    private int[] quantites;
 
-    // Le constructeur de la classe Commande
-    public Commande() {
-        // Initialisation de l'attribut articles avec une liste vide
-        articles = new ArrayList<Article>();
-        // Initialisation de l'attribut total à 0
-        total = 0;
+    public Commande(int numero, Date date, Client client, Article[] articles, int[] quantites) {
+        this.numero = numero;
+        this.date = date;
+        this.client = client;
+        this.articles = articles;
+        this.quantites = quantites;
     }
 
-    // La méthode pour ajouter un article à la commande
-    public void ajouterArticle(Article article) {
-        // Ajout de l'article à la liste des articles
-        articles.add(article);
-        // Mise à jour du total de la commande
-        total += article.getPrix();
+    public int getNumero() {
+        return numero;
     }
 
-    // La méthode pour calculer le total de la commande
+    public Date getDate() {
+        return date;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public Article[] getArticles() {
+        return articles;
+    }
+
+    public int[] getQuantites() {
+        return quantites;
+    }
+
     public double calculerTotal() {
-        // Initialisation du total à 0
         double total = 0;
-        // Pour chaque article dans la liste des articles
-        for (Article article : articles) {
-            // Ajout du prix de l'article au total
-            total += article.getPrix();
+        for (int i = 0; i < articles.length; i++) {
+            total += articles[i].getPrix() * quantites[i];
         }
-        // Retourne le total de la commande
         return total;
-    }
-
-    // La méthode pour afficher les articles de la commande
-    public void afficherArticles() {
-        // Pour chaque article dans la liste des articles
-        for (Article article : articles) {
-            // Affichage de l'article
-            System.out.println(article.toString());
-        }
-    }
-
-    // La méthode pour afficher le total de la commande
-    public void afficherTotal() {
-        // Affichage du total de la commande
-        System.out.println("Total : " + total);
     }
 }
