@@ -15,7 +15,6 @@ public class Main {
         commande.ajouterArticle(pc);
         commande.ajouterArticle(manette);
 
-
         // Afficher le total de la commande
         System.out.println("Total de la commande : " + commande.calculerTotal());
     }
