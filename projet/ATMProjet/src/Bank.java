@@ -30,6 +30,8 @@ public class Bank {
         // Ajoutez les clients de la banque ici
         ajouterClient("Dupont", "Jean", 1234, 1000); // Appelle la méthode ajouterClient pour ajouter un client
         ajouterClient("Martin", "Sophie", 4321, 2000); // Appelle la méthode ajouterClient pour ajouter un autre client
+        ajouterClient("Sophie", "Benna", 6666, 1456); // Appelle la méthode ajouterClient pour ajouter un autre client
+        ajouterClient("Mounir", "Prof", 6900, 10000000); // Appelle la méthode ajouterClient pour ajouter un autre client
     }
 
 
