@@ -24,6 +24,11 @@ public class Bank {
         clients.put(codePin, client);
     }
 
+    // Récupère le client en utilisant le code PIN comme clé dans la Map
+    public Client getClientByPin(int codePin) {
+        return clients.get(codePin);
+    }
+
     public Bank(
     ) {
 
@@ -38,9 +43,4 @@ public class Bank {
         ajouterClient("Mounir", "Prof", 6900, 10000000);
     }
 
-
-
-    public Client getClientByPin(int codePin) {
-        return clients.get(codePin); // Récupère le client en utilisant le code PIN comme clé dans la Map
-    }
 }
