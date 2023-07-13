@@ -1,5 +1,4 @@
 package atm.util;
-
 import database.Sqlite;
 import java.util.Scanner;
 
@@ -67,6 +66,7 @@ public class ATM {
                 System.out.println("Merci d'utiliser notre ATM. Au revoir !");
                 currentPin = 0;
                 break;
+
 
             default:
                 System.out.println("Choix invalide.");

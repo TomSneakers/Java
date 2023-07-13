@@ -59,18 +59,19 @@ public class Sqlite {
                 statement.setObject(index, arg);
                 index++;
             }
-           statement.execute();
+            statement.execute();
         } catch (Exception e) {
             System.out.println(e);
         }
     }
+
     private Iterable<Object[]> ExtractData(ResultSet res) throws SQLException {
         var result = new ArrayList<Object[]>();
         while (res.next()) {
             var columnNumber = res.getMetaData().getColumnCount();
             var row = new Object[columnNumber];
             for (int i = 0; i <= columnNumber - 1; i++) {
-                row[i] = res.getObject(i+1);
+                row[i] = res.getObject(i + 1);
             }
             result.add(row);
         }
