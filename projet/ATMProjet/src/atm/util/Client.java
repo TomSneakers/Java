@@ -1,5 +1,7 @@
+package atm.util;
+
 public class Client {
-    //La classe Client possède des attributs privés: nom prenom solde codepin
+    //La classe atm.util.Client possède des attributs privés: nom prenom solde codepin
     // Le nom du client
     private String nom;
 

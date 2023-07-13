@@ -1,44 +1,38 @@
+import atm.util.ATM;
+import atm.util.Bank;
+import database.Sqlite;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Création d'une instance de la classe Bank
+        String dbPath = "./atm.db";
         Bank bank = new Bank();
-        // Création d'une instance de la classe ATM avec la banque
         ATM atm = new ATM(bank);
-        // Création d'un objet Scanner pour la saisie utilisateur
+        Sqlite.getInstance().connect();
+
         Scanner scanner = new Scanner(System.in);
 
-        //Boucle de la méthode main qui permet de ce dépllacer et ne pas recommencer les opération
         while (true) {
-            //Identification
-            System.out.print("Veuillez entrer votr code PIN : ");
-
-            // Lecture du code PIN saisi par l'utilisateur
+            System.out.print("Veuillez entrer votre code PIN : ");
             int pin = scanner.nextInt();
 
             if (atm.authenticate(pin)) {
-                // Affiche le menue grace à la ckasse ATM
                 atm.displayMenu();
 
-
-                // Lecture du choix de l'utilisateur
                 int choice = scanner.nextInt();
-
-                // Appel de la méthode performOperation de la classe ATM pour effectuer l'opération choisie
                 atm.performOperation(choice);
             } else {
                 System.out.println("Authentification échouée. Veuillez réessayer.");
             }
-            System.out.print("Voulez-vous effectuer une autre opération ? yes or non ");
 
-            // Lecture de l'option de l'utilisateur pour continuer ou quitter
+            System.out.print("Voulez-vous effectuer une autre opération ? yes or non ");
             String option = scanner.next();
-            //Si l'entrer option n'est pas yes alors il arrete le programm, si l'entrer est yes alors il recommence le programme
-            //C'est un bolléen inversé grace au point ! au debut de la fonction
+
             if (!option.equalsIgnoreCase("yes")) {
                 break;
             }
         }
+
+        Sqlite.getInstance().close();
     }
 }
