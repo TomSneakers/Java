@@ -42,13 +42,13 @@ public class Main {
             }
 
 
-            System.out.print("Voulez-vous effectuer une autre opération ? yes or non ");
+            System.out.print("Voulez-vous effectuer une autre opération ? oui ou non ");
             String option = scanner.next();
 
-            // Vérifie si option est l'entrer est egal a yes
-            if (!option.equalsIgnoreCase("yes")) {
+            // Vérifie si option est l'entrer est egal a oui
+            if (!option.equalsIgnoreCase("oui")) {
 
-                // Sort de la boucle principale si l'option n'est pas "yes"
+                // Sort de la boucle principale si l'option n'est pas "oui"
                 break;
             }
         }

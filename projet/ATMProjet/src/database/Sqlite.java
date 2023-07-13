@@ -96,10 +96,17 @@ public class Sqlite {
         var result = new ArrayList<Object[]>();
         // Parcourt chaque ligne du résultat
         while (res.next()) {
-            var columnNumber = res.getMetaData().getColumnCount();  // Récupère le nombre de colonnes du résultat
-            var row = new Object[columnNumber];  // Crée un tableau d'objets pour stocker les valeurs de la ligne courante
+
+            // Récupère le nombre de colonnes du résultat
+            var columnNumber = res.getMetaData().getColumnCount();
+
+            // Crée un tableau d'objets pour stocker les valeurs de la ligne courante
+            var row = new Object[columnNumber];
+
             for (int i = 0; i <= columnNumber - 1; i++) {
-                row[i] = res.getObject(i + 1);  // Récupère la valeur de chaque colonne de la ligne courante et l'ajoute au tableau
+
+                // Récupère la valeur de chaque colonne de la ligne courante et l'ajoute au tableau
+                row[i] = res.getObject(i + 1);
             }
             result.add(row);  // Ajoute le tableau représentant la ligne dans l'ArrayList
         }

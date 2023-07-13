@@ -19,8 +19,10 @@ public class Bank {
         var result = Sqlite.getInstance().ExecuteQueryRow(sql, codePin);
         return new Client((String) result[0], (String)result[1], (int) result[2], (double) result[3]);
     }
-    private Map<Integer, Client> clients;
-    public void ajouterClient(String nom, String prenom, int codePin, double solde) {
+
+
+    //private Map<Integer, Client> clients;
+    /*public void ajouterClient(String nom, String prenom, int codePin, double solde) {
         Client client = new Client(nom, prenom, codePin, solde);
         clients.put(codePin, client);
 
@@ -32,7 +34,7 @@ public class Bank {
             e.printStackTrace();
             System.out.println("Erreur lors de la création du compte.");
         }
-    }
+    }*/
 
     /*public Bank() {
         clients = new HashMap<>();
