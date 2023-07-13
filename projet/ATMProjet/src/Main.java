@@ -20,8 +20,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {  // Boucle principale
+            //Menue principal
             System.out.println("1 - se connecter");
             System.out.println("2 - créer un compte");
+            System.out.print("Veuillez enrter votre choix : ");
             int choix = scanner.nextInt();
             switch (choix){
                 case 1:
