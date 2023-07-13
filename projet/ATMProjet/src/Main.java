@@ -3,6 +3,8 @@ import atm.util.Bank;
 import database.Sqlite;
 import java.util.Scanner;
 
+import static java.lang.System.exit;
+
 public class Main {
     public static void main(String[] args) {
         // Crée une nouvelle instance de la classe Bank
@@ -18,41 +20,53 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {  // Boucle principale
-
-            // Affiche le message demandant au utilisateur d'entrer son code PIN
-            System.out.print("Veuillez entrer votre code PIN : ");
-
-            // Lit l'entier entré et le stocke dans la variable pin
-            int pin = scanner.nextInt();
-
-            // Vérifie si le code PIN est valide en appelant la méthode authenticate de l'objet atm
-            if (atm.authenticate(pin)) {
-
-                // Si la methode qui verifie le code pin retourne true alors il affiche le menue de l'objet atm
-                atm.displayMenu();
-
-                // Lit l'entier entré par l'utilisateur et le stocke dans la variable choice
-                int choice = scanner.nextInt();
-
-                // Exécute l'opération choisie par l'utilisateur en appelant la méthode performOperation de l'objet atm
-                atm.performOperation(choice);
-            } else {
-                // si l'authent echoue
-                System.out.println("Authentification échouée. Veuillez réessayer.");
-            }
-
-
-            System.out.print("Voulez-vous effectuer une autre opération ? oui ou non ");
-            String option = scanner.next();
-
-            // Vérifie si option est l'entrer est egal a oui
-            if (!option.equalsIgnoreCase("oui")) {
-
-                // Sort de la boucle principale si l'option n'est pas "oui"
-                break;
+            System.out.println("1 - se connecter");
+            System.out.println("2 - créer un compte");
+            int choix = scanner.nextInt();
+            switch (choix){
+                case 1:
+                    login(atm, scanner);
+                    break;
+                case 2:
+                    bank.ajouterClient();
+                    break;
+                default:
+                    System.out.println("Option inconnue");
             }
         }
-        // Ferme la connexion à la base de données en appelant la méthode close de la classe Sqlite
-        Sqlite.getInstance().close();
+
+    }
+
+    private static void login(ATM atm, Scanner scanner){
+        // Affiche le message demandant au utilisateur d'entrer son code PIN
+        System.out.print("Veuillez entrer votre code PIN : ");
+
+        // Lit l'entier entré et le stocke dans la variable pin
+        int pin = scanner.nextInt();
+
+        // Vérifie si le code PIN est valide en appelant la méthode authenticate de l'objet atm
+        if (atm.authenticate(pin)) {
+
+            // Si la methode qui verifie le code pin retourne true alors il affiche le menue de l'objet atm
+            atm.displayMenu();
+
+            // Lit l'entier entré par l'utilisateur et le stocke dans la variable choice
+            int choice = scanner.nextInt();
+
+            // Exécute l'opération choisie par l'utilisateur en appelant la méthode performOperation de l'objet atm
+            atm.performOperation(choice);
+        } else {
+            // si l'authent echoue
+            System.out.println("Authentification échouée. Veuillez réessayer.");
+        }
+
+
+        System.out.print("Voulez-vous effectuer une autre opération ? oui ou non ");
+        String option = scanner.next();
+
+        // Vérifie si option est l'entrer est egal a oui
+        if (!option.equalsIgnoreCase("oui")) {
+            exit(0);
+        }
     }
 }
